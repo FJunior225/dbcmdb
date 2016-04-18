@@ -80,4 +80,6 @@ ActiveRecord::Schema.define(version: 20160418191721) do
     t.boolean "trusted",         default: false
   end
 
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
+
 end
