@@ -11,10 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418185404) do
+
+ActiveRecord::Schema.define(version: 20160418184950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "users", force: :cascade do |t|
     t.string  "email"
@@ -22,5 +24,18 @@ ActiveRecord::Schema.define(version: 20160418185404) do
     t.string  "password_digest"
     t.boolean "trusted"
   end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "review_title",   null: false
+    t.text     "review_content", null: false
+    t.boolean  "recommend",      null: false
+    t.integer  "user_id",        null: false
+    t.integer  "film_id",        null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "reviews", ["film_id"], name: "index_reviews_on_film_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
 end
