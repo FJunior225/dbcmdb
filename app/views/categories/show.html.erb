@@ -4,6 +4,6 @@
 
 <ul>
   <% @category.films.each do |film| %>
-  <li></li>
+  <li> <%= link_to "#{film.title}", film_path(film.id) %></li>
   <% end %>
 </ul>

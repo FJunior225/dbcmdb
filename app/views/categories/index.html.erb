@@ -3,14 +3,11 @@
 <h2>Categories</h2>
 <ul>
 <% @categories.each do |category| %> 
-  <li>
     <li> <%= link_to "#{category.name}", category_path(category.id) %></li>
     <ol>
     <% category.films.each do |film| %>
-
-    <li><%= film.title %></li>
+    <li> <%= link_to "#{film.title}", film_path(film.id) %></li>
     <% end %>
     </ol>
-  </li>
 <% end %>
 </ul>

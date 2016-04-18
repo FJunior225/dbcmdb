@@ -5,7 +5,6 @@ def index
 end
 
 def show
-  binding.pry
   @category =  Category.find(params[:id])
 end
 
