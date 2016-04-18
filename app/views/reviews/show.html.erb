@@ -1,0 +1,24 @@
+<h1>Title:<%= @review.review_title.capitalize %></h1>
+<div>
+  <strong>Film: <%= @review.film.title %></strong>
+</div>
+<div>
+  <strong>Made By:<%= @review.user.username %></strong>
+</div>
+<p>Would you recommend this film?
+  <% if @review.recommend %>
+    Yes!
+  <% else %>
+    Gosh No!
+  <% end %>
+</p>
+<p>Thoughts: <%= @review.review_content %></p>
+<%= form_for @comment, {html: {class: "hide" } } do |f| %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <%= f.label :comment_body %>
+  <%= f.text_field :comment_body %>
+
+  <%= f.submit "Create Comment" %>
+<% end %>

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
    resources :user
 
+  resources :reviews, except: [:index, :destroy]
+  resources :comments, except: [:index, :show]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
