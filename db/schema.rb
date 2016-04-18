@@ -11,22 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160418190734) do
+ActiveRecord::Schema.define(version: 20160418191721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
-  create_table "users", force: :cascade do |t|
-    t.string  "email"
-    t.string  "username"
-    t.string  "password_digest"
-    t.boolean "trusted"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string   "name",       null: false
+    t.integer  "film_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,11 +44,21 @@ ActiveRecord::Schema.define(version: 20160418190734) do
     t.string   "title",       null: false
     t.string   "description", null: false
     t.string   "picture"
+    t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   add_index "films", ["title"], name: "index_films_on_title", using: :btree
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.integer  "rating"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.string   "review_title",   null: false
@@ -70,5 +72,12 @@ ActiveRecord::Schema.define(version: 20160418190734) do
 
   add_index "reviews", ["film_id"], name: "index_reviews_on_film_id", using: :btree
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string  "email",                           null: false
+    t.string  "username",                        null: false
+    t.string  "password_digest",                 null: false
+    t.boolean "trusted",         default: false
+  end
 
 end
