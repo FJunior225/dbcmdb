@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160418191721) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       null: false
+    t.integer  "film_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160418191721) do
     t.string   "title",       null: false
     t.string   "description", null: false
     t.string   "picture"
+    t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
