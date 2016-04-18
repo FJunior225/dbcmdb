@@ -14,6 +14,22 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update_attributes(review_params)
+      flash[:success] = "Review updated!"
+      redirect_to @review
+    else
+      @errors = @review.errors.full_messages
+      flash[:error] = "You did not enter a valid reponse!"
+      render 'reviews/edit'
+    end
+  end
+
   def show
     @reviews = Review.paginate(:page => params[:page])
   end
