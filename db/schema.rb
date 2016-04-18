@@ -12,7 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 20160418184950) do
+ActiveRecord::Schema.define(version: 20160418190734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,38 @@ ActiveRecord::Schema.define(version: 20160418184950) do
     t.string  "password_digest"
     t.boolean "trusted"
   end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories_films", force: :cascade do |t|
+    t.integer "film_id"
+    t.integer "category_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment_body",     null: false
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id",          null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "films", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.string   "description", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "films", ["title"], name: "index_films_on_title", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.string   "review_title",   null: false
