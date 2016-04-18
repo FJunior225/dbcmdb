@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @reviews = Review.paginate(:page => params[:page])
+    @review = Review.find(params[:id])
   end
 
   private
