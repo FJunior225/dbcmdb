@@ -5,7 +5,12 @@
 </div>
 <div>
   <strong>Made By:</strong>
-  <%= review.user.email %>
+  <%= review.user.username %> -
+  <% if review.user.trusted %>
+    Trusted User!
+  <% else %>
+    Not Trusted!
+  <% end %>
 </div>
 <div>
   <strong>Thoughts:</strong> <%= review.review_content %>
