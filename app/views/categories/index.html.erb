@@ -1,4 +1,13 @@
 <h1>welcome Page</h1>
 
 <h2>Categories</h2>
-
+<ul>
+<% @categories.each do |category| %> 
+    <li> <%= link_to "#{category.name}", category_path(category.id) %></li>
+    <ol>
+    <% category.films.each do |film| %>
+    <li> <%= link_to "#{film.title}", film_path(film.id) %></li>
+    <% end %>
+    </ol>
+<% end %>
+</ul>

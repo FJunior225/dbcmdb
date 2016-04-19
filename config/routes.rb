@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
+  devise_for :users
+  
+
   root "categories#index"
+  resources :categories, only: [:show]
+  resources :films, only: [:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -11,7 +16,7 @@ Rails.application.routes.draw do
 
 
 
-   resources :user
+ 
 
   resources :reviews, except: [:index, :destroy]
   resources :comments, except: [:index, :show]
