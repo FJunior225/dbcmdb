@@ -18,7 +18,7 @@
             <div class="col-md-6">
                 <ul class="nav">
                   <%if current_user %>
-                    <li><h5>Hi, Dipshit</h5></li>
+                    <li><h5>Hi, <%=current_user.username%></h5></li>
                     <li class='nbtn'><a href="#">My Profile</a></li>
                     <li class='nbtn'><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
 
