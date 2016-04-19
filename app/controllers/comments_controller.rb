@@ -1,14 +1,17 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+  def new
+    @comment = Comment.new
+  end
 
   def create
-    binding.pry
-    @review = Review.find_by(id: params[:id])
-    @comment = @review.comments.build(comment_params)
+    @comment = @commentable.comments.new(comment_params)
+    @comment.user = current_user
     if @comment.save
       if request.xhr?
-        render '_comments', layout: false, locals: {comment: @comment}
+        redirect_to @commentable
       else
-        redirect_to action: 'show', controller:'reviews' , id:params[:review][:id].to_i
+        redirect_to @commentable
       end
     else
       redirect_to action: 'show', controller:'reviews' , id:params[:review][:id].to_i
@@ -17,7 +20,7 @@ class CommentsController < ApplicationController
 
   private
 
-  def comment_params
-    params.require(:comment).permit(:comment_body, :commentable_id, :commentable_type, :user_id, :review_id)
-  end
+    def comment_params
+      params.require(:comment).permit(:comment_body)
+    end
 end

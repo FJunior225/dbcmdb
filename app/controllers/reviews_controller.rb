@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def new
-    @film = Film.find(params[:id])
+    # @film = Film.find(params[:id])
   end
 
   def create
@@ -37,9 +37,9 @@ class ReviewsController < ApplicationController
 
   private
 
-  def review_params
-    params.require(:review).permit(:review_title, :review_content, :recommend, :user_id, :film_id)
-  end
+    def review_params
+      params.require(:review).permit(:review_title, :review_content, :recommend, :user_id, :film_id)
+    end
 
 
 end
