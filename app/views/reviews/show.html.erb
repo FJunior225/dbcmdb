@@ -1,20 +1,8 @@
-<h1>Title:<%= @review.review_title.capitalize %></h1>
-<div>
-  <strong>Film: <%= @review.film.title %></strong>
-</div>
-<div>
-  <strong>Made By: <%= @review.user.email %></strong>
-</div>
-<p>Would you recommend this film?
-  <% if @review.recommend %>
-    Yes!
-  <% else %>
-    Gosh No!
-  <% end %>
-</p>
-<p>Thoughts: <%= @review.review_content %></p>
+<%= render partial: 'reviews/review', locals: { review: @review } %>
+
 <%= link_to "Edit", edit_review_path(@review) %>
-| <%= link_to "Back", film_path %>
+
+| <%= link_to "Back", film_path(@film) %>
 
 <%= render partial: "comments/comments", locals: { commentable: @review } %>
 

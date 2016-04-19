@@ -1,0 +1,20 @@
+<h3>Title: <%= link_to review.review_title.capitalize, review_path(review) %></h3>
+<div>
+  <strong>Film:</strong>
+  <%= review.film.title %>
+</div>
+<div>
+  <strong>Made By:</strong>
+  <%= review.user.email %>
+</div>
+<div>
+  <strong>Thoughts:</strong> <%= review.review_content %>
+</div>
+<div>
+  <strong>Would You Recommend this Film?</strong>
+    <% if review.recommend %>
+      Yes!
+    <% else %>
+      Gosh No!
+    <% end %>
+</div>

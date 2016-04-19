@@ -33,6 +33,7 @@ class ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
     @comment = Comment.new
+    @film = Film.find_by(id: @review.film_id)
   end
 
   private
