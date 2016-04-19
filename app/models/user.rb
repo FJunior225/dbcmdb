@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   	devise :omniauthable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
-    	 :omniauth_providers => [:facebook, :twitter]
+    	   :omniauth_providers => [:facebook, :twitter]
 
 
 
@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
         if !user.email
           user.email = SecureRandom.base64
         end
+        user.username = auth.info.name
         user.password = Devise.friendly_token[0,20]
       end
   end
