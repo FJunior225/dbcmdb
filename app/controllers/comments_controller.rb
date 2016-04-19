@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
 
   def create
+    binding.pry
     @review = Review.find_by(id: params[:id])
-    @comment = @review.comments.new(comment_params)
+    @comment = @review.comments.build(comment_params)
     if @comment.save
       if request.xhr?
         render '_comments', layout: false, locals: {comment: @comment}

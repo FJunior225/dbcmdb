@@ -3,7 +3,7 @@
   <strong>Film: <%= @review.film.title %></strong>
 </div>
 <div>
-  <strong>Made By:<%= @review.user.username %></strong>
+  <strong>Made By:<%= @review.user.email %></strong>
 </div>
 <p>Would you recommend this film?
   <% if @review.recommend %>
@@ -16,7 +16,7 @@
 <div class="form-container">
   <%= form_for @comment, {html: {class: "hide comment-form" } } do |f| %>
 
-
+    <%= f.hidden_field :review, value: @review.id %>
 
     <%= f.label :comment_body %>
     <%= f.text_field :comment_body %>
