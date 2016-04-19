@@ -1,0 +1,22 @@
+.cat-heading{
+  text-align: center;
+  font-size: 19px;
+  padding-top: 40px;
+}
+.text-lead{
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.bxslider{
+  height: 400px;
+}
+
+.category-list li {
+  display: inline-block;
+  padding: 16px;
+  text-align: center;
+}
+.category-list{
+  padding-left: 30px;
+}

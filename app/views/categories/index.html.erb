@@ -1,7 +1,19 @@
-<h1>welcome Page</h1>
+<h2 class="cat-heading">
+<span>Hits for the weekend</span>
+</h2>
+<p class="text-lead">Discover new, inspiring places close to home.</p>
 
-<h2>Categories</h2>
-<ul>
+<ul class="bxslider">
+  <li><img src="http://ia.media-imdb.com/images/M/MV5BMTc2NjMzOTE3Ml5BMl5BanBnXkFtZTcwMDE0OTc5Mw@@._V1__SX1219_SY519_.jpg" /></li>
+  <li><img src="http://ia.media-imdb.com/images/M/MV5BMTQxODE3NjM1Ml5BMl5BanBnXkFtZTcwMzkzNjc4OA@@._V1__SX1219_SY519_.jpg" /></li>
+  <li><img src="http://ia.media-imdb.com/images/M/MV5BMTc2NjMzOTE3Ml5BMl5BanBnXkFtZTcwMDE0OTc5Mw@@._V1__SX1219_SY519_.jpg" /></li>
+  <li><img src="http://ia.media-imdb.com/images/M/MV5BMTQxODE3NjM1Ml5BMl5BanBnXkFtZTcwMzkzNjc4OA@@._V1__SX1219_SY519_.jpg" /></li>
+</ul>
+<h2 class="cat-heading">
+<span>Categories</span>
+</h2>
+
+<ul class="category-list">
 <% @categories.each do |category| %> 
     <li> <%= link_to "#{category.name}", category_path(category.id) %></li>
     <ol>
@@ -11,3 +23,4 @@
     </ol>
 <% end %>
 </ul>
+

@@ -2,20 +2,30 @@
 <html>
 <head>
   <title>Dbcmdb</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <nav>
-      <%= link_to "Signout", destroy_user_session_path, method: :delete %>
+  <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">  
+            <h1><a href="#">IMDB</a></li><h1>
+            </div>  
+            <div class="col-md-6">
+                <ul class="nav">
+                  <li class='nbtn'><a href="#">Latest Reviews</a></li>
+                  <li class='nbtn'><a href="#">Login</a></li>
+                  <li class='nbtn'><a href="#">Register</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-    </nav>
-  </header>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
 <%= yield %>
 
