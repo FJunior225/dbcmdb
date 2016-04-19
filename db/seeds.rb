@@ -6,9 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-def create_user
-	User.create(email: Faker::Internet.email, username: Faker::Internet.user_name, password: "pw")
-end
+
+
 
 def create_film
 	Film.create(title: Faker::Superhero.name, description: Faker::StarWars.quote, picture: Faker::Placeholdit.image("50x50"))
@@ -30,7 +29,6 @@ def create_category
 	Category.create(name: "New Release")
 end
 
-10.times {create_user}
 10.times {create_film}
 10.times {create_review}
 10.times {create_comment}
