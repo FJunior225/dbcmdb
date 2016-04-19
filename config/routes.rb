@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
+
   
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" } 
     get 'users/:id' => 'users#show'
 
   
-  
+
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+
+
+
+
 
   root "categories#index"
   resources :categories, only: [:show]
-  resources :films, only: [:show]
+  resources :films, only: [:show] do
+    resources :comments, module: :films
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -20,10 +29,11 @@ Rails.application.routes.draw do
 
 
 
- 
 
-  resources :reviews, except: [:index, :destroy]
-  resources :comments, except: [:index, :show]
+
+  resources :reviews, except: [:index, :destroy] do
+    resources :comments, module: :reviews
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
