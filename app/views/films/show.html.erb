@@ -1,8 +1,38 @@
 <h1>Film Page</h1>
 <%=link_to image_tag(@film.picture, size: "200x200") %>
 <h2><%= @film.title %></h2>
-<p><%= @film.description %></p>
+<p>Film Description: <%= @film.description %></p>
+<hr />
+
+<h1>Film Reviews</h1>
+<% @film.reviews.each do |review| %>
+<p><strong><%= link_to review.review_title, review_path(review) %></strong></p>
+<strong>Made By:<%= review.user.email %></strong>
+<p><%= review.review_content %></p>
+<br>
+<hr />
+
+<% end %>
+
+
 
 <hr />
-<h2>Reviews</h2>
+<h2>Submit a Review</h2>
+
+
+<%= form_for @review do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.hidden_field :film_id, value: @film.id %>
+
+<%= f.text_field :review_title, :placeholder => "Review Title", :class => "review-input"%><br />
+<%= f.text_area :review_content, :placeholder =>"Write your review here...", :class => "review-input" %> <br />
+
+<%= f.label :Recommend? %>
+<%= f.check_box :recommend %><br />
+
+<%= f.submit "Create Review" %>
+<% end %>
+
+
+
 
