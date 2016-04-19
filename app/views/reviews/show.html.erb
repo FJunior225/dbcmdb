@@ -16,7 +16,6 @@
 <div class="form-container">
   <%= form_for @comment, {html: {class: "hide comment-form" } } do |f| %>
 
-    <%= f.hidden_field :review, value: @review.id %>
 
     <%= f.label :comment_body %>
     <%= f.text_field :comment_body %>
