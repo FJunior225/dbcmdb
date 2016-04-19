@@ -1,6 +1,6 @@
 .cat-heading{
   text-align: center;
-  font-size: 18px;
+  font-size: 19px;
   padding-top: 40px;
 }
 .text-lead{
@@ -10,4 +10,13 @@
 
 .bxslider{
   height: 400px;
+}
+
+.category-list li {
+  display: inline-block;
+  padding: 16px;
+  text-align: center;
+}
+.category-list{
+  padding-left: 30px;
 }
