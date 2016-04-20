@@ -8,7 +8,7 @@
 
 
 def create_user
-  User.create!(email: Faker::Internet.email, password: "foobar", username: Faker::Name.name)
+  User.create!(email: Faker::Internet.email, password: "foobar", username: Faker::Name.name, trusted: [true, false].sample)
 end
 
 def create_film
@@ -30,9 +30,18 @@ def create_category
 	Category.create(name: "Total Shit")
 	Category.create(name: "New Releases")
 end
+ 
+def film_jam
+	categories = Category.all
+	films = Film.all
+	films.each do |film|
+		categories.sample.films << film
+	end
+end
 
 10.times {create_user}
 10.times {create_film}
 10.times {create_review}
 10.times {create_comment}
 create_category
+film_jam
