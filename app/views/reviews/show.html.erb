@@ -1,9 +1,20 @@
-<%= render partial: 'reviews/review', locals: { review: @review } %>
+<section class='review_rating'>
+  <%= render partial: 'reviews/review', locals: { review: @review } %>
 
-<%= render partial: 'ratings/ratings', locals: { rateable: @review } %>
-<%= link_to "Edit", edit_review_path(@review) %>
+  Did you find this review useful?
+  <%= render partial: 'ratings/review_new_rating', locals: { rateable: @review } %>
+  <div class='review_useful'>
+    <%= render partial: 'ratings/review_usefule_rating', locals: { rateable: @review } %>
+  </div>
+</section>
 
-| <%= link_to "Back", film_path(@film) %>
+<div>
+  <% if current_user == @review.user_id %>
+    <%= link_to "Edit", edit_review_path(@review) %>   |
+  <% end %>
+
+  <%= link_to "Back", film_path(@film) %>
+</div>
 
 <%= render partial: "comments/comments", locals: { commentable: @review } %>
 

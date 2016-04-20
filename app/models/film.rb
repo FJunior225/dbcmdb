@@ -19,4 +19,5 @@ validates :title,:description, presence: true
       total_ratings/ratings.count
     end
   end
+
 end
