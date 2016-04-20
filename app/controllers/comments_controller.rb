@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       if request.xhr?
-        redirect_to @commentable
+        render partial: '/comments/comments'
       else
         redirect_to @commentable
       end
