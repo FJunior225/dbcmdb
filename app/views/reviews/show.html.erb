@@ -9,7 +9,7 @@
 </section>
 
 <div>
-  <% if current_user == @review.user_id %>
+  <% if current_user == @review.user %>
     <%= link_to "Edit", edit_review_path(@review) %>   |
   <% end %>
 
