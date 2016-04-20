@@ -1,3 +1,29 @@
+<h1>
+  <%= @film.title %> / Rating: <%= render partial: 'ratings/ratings', locals: { rateable: @film } %>
+</h1>
+<h4>Rate This Movie! <%= render partial: 'ratings/new_ratings', locals: { rateable: @film }%></h4>
+
+<div>
+  <%=link_to image_tag(@film.picture, size: "200x200") %>
+</div>
+
+<div>
+  Film Description: <%= @film.description %>
+</div>
+
+<%= render partial: "comments/comments", locals: { commentable: @film } %>
+
+<div class="form-container">
+  <%= render partial: "comments/form", locals: { commentable: @film } %>
+</div>
+<hr />
+
+<h1>Film Reviews</h1>
+<% @film.reviews.each do |review| %>
+  <%= render partial: 'reviews/review', locals: { review: review } %>
+  <br>
+  <hr />
+<% end %>
 <ul class="nav nav-tabs">
   <li class="active recent"><a href="#">RecentReviews</a></li>
   <li class="trusted"><a href="#">TrustedReviews</a></li>
@@ -9,24 +35,10 @@
 <hr />
 <section class="recent-partial"><%= render partial: 'films/recent' %></section>
 <section class="trusted-partial"><%= render partial: 'films/trusted' %></section>
+>>>>>>> master
 
 <hr />
 <h2>Submit a Review</h2>
 
-
-<%= form_for @review do |f| %>
-<%= f.hidden_field :user_id, value: current_user.id %>
-<%= f.hidden_field :film_id, value: @film.id %>
-
-<%= f.text_field :review_title, :placeholder => "Review Title", :class => "review-input"%><br />
-<%= f.text_area :review_content, :placeholder =>"Write your review here...", :class => "review-input" %> <br />
-
-<%= f.label :Recommend? %>
-<%= f.check_box :recommend %><br />
-
-<%= f.submit "Create Review" %>
-<% end %>
-
-
-
+<%= render partial: 'reviews/review_form', locals: { review: @review } %>
 
