@@ -99,12 +99,12 @@ body{
 }
 
 footer{
-  padding: 100px 20px 90px 20px;
+  padding: 50px 20px 50px 20px;
   text-align: center;
   background-color:#ff5a5f;
   color: #FFF;
   font-size: 12px;
-  margin-top: 25%;
+  margin-top: 10%;
 }
 .footer-list{
   display: inline-block;
