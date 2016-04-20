@@ -13,19 +13,19 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-            <h1><a href="#">IMDB</a></li><h1>
+            <h1><a href="/">DBC IMDB</a></li><h1>
             </div>
             <div class="col-md-6">
                 <ul class="nav">
                   <%if current_user %>
                     <li><h5>Hi, <%=current_user.username%></h5></li>
-                    <li class='nbtn'><a href="#">My Profile</a></li>
+                    <li class='nbtn'><a href="/users/show">My Profile</a></li>
                     <li class='nbtn'><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
 
                   <%else%>
                     <li class='nbtn'><a href="#">Latest Reviews</a></li>
-                    <li class='nbtn'><a href="#">Login</a></li>
-                    <li class='nbtn'><a href="#">Register</a></li>
+                    <li class='nbtn'><a href="/users/sign_in">Login</a></li>
+                    <li class='nbtn'><a href="/users/sign_up">Register</a></li>
                   <% end %>
                 </ul>
             </div>

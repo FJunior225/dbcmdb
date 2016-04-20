@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" } 
+    get 'users/:id' => 'users#show'
+
+  
+
+
 
 
 
@@ -9,7 +15,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :films, only: [:show] do
     resources :comments, module: :films
+
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
