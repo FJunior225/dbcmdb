@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :reviews
 	has_many :comments
-	has_many :ratings
+	has_many :ratings, through: :reviews, source: :ratings
 
 
   devise :omniauthable, :database_authenticatable, :registerable,
@@ -26,7 +26,12 @@ class User < ActiveRecord::Base
   end
 
 
-  def total_average_rating
+  def total_user_ratings
+    ratings.sum(:rating)
+  end
 
+  def trusted_user
+    total_user_ratings > 0 ? self.trusted = true : self.trusted = false
+    save
   end
 end
