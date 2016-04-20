@@ -9,10 +9,10 @@ $(document).ready(function() {
       data: $target.serialize()
     })
     .done(function(response) {
-      debugger;
+      $(".comments-box").append(response)
     })
     .fail(function(response) {
-
+      // debugger;
       alert("Please contact support!");
     })
 
