@@ -18,18 +18,6 @@ Rails.application.routes.draw do
     resources :ratings, module: :films
   end
 
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-
-
-
-
-
-
-
   resources :reviews, except: [:index, :destroy] do
     resources :comments, module: :reviews
     resources :ratings, module: :reviews
