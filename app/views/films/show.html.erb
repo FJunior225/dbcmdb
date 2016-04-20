@@ -1,20 +1,14 @@
-<h1>Film Page</h1>
+<ul class="nav nav-tabs">
+  <li class="active recent"><a href="#">RecentReviews</a></li>
+  <li class="trusted"><a href="#">TrustedReviews</a></li>
+</ul>
+
 <%=link_to image_tag(@film.picture, size: "200x200") %>
 <h2><%= @film.title %></h2>
 <p>Film Description: <%= @film.description %></p>
 <hr />
-
-<h1>Film Reviews</h1>
-<% @film.reviews.order('reviews.created_at DESC').each do |review| %>
-<p><strong><%= link_to review.review_title, review_path(review) %></strong></p>
-<strong>Made By: <%= review.user.username %></strong>
-<p><%= review.review_content %></p>
-<br>
-<hr />
-
-<% end %>
-
-
+<section class="recent-partial"><%= render partial: 'films/recent' %></section>
+<section class="trusted-partial"><%= render partial: 'films/trusted' %></section>
 
 <hr />
 <h2>Submit a Review</h2>
