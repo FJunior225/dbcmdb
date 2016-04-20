@@ -39,13 +39,19 @@ main {
   padding-top: 1em;
 }
 
+.user-show-page{
+  margin-top: 50px;
+  margin-bottom: 60px;
+
+}
 .film-title {
   text-align: center;
   color:black;
   font-family: 'Droid Serif', serif;
   border:2px solid rgb(251, 66, 74);
   border-radius: 7px;
-  width:25%;
+  width:40%;
+  padding: 6px;
   background-color: rgb(242,242,242);
 }
 .col-md-6 img {

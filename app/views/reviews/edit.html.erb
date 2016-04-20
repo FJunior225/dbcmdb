@@ -1,22 +1,27 @@
+<main>
+<div class='review-input recent-reviews-container'>
+
 <%= form_for @review do |f| %>
   <div class="form-group">
     <div>
-      <%= f.label :review_title, "Review Title" %>
+      <%= f.label :review_title, "Review Title",:class => "review-input" %>
     </div>
     <div>
       <%= f.text_field :review_title, value: @review.review_title %><br />
     </div>
     <div>
-      <%= f.label :review_content, "Review Content" %>
+      <%= f.label :review_content, "Review Content", :class => "review-input"%>
     </div>
     <div>
       <%= f.text_area :review_content, value: @review.review_content %><br />
     </div>
-    <div>
+    <div class="recommend-button">
       <%= f.label :Recommend? %>
       <%= f.check_box :recommend %><br />
     </div>
   </div>
 
-  <%= f.submit "Edit Comment", class: "btn btn-primary" %>
+  <%= f.submit "Edit Comment", class: "  button-submit" %>
 <% end %>
+</div>
+</main>
