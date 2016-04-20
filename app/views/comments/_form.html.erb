@@ -1,7 +1,6 @@
 <%= form_for [commentable, @comment] do |f| %>
-  <div class="form-group">
+  <div class="form-group comment-form">
     <%= f.text_area :comment_body, class: "form-group review-input", placeholder: "Comment Content" %>
   </div>
-
-  <%= f.submit "Create Comment", class: "btn btn-primary button-submit" %>
+    <%= f.submit "Create Comment", class: "btn btn-primary button-submit" %>
 <% end %>
