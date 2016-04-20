@@ -1,0 +1,11 @@
+<%= form_for review do |f| %>
+  <%= f.hidden_field :film_id, value: @film.id %>
+
+  <%= f.text_field :review_title, :placeholder => "Review Title", :class => "review-input"%><br />
+  <%= f.text_area :review_content, :placeholder =>"Write your review here...", :class => "review-input" %> <br />
+<div class="recommend-button">
+  <%= f.label :Recommend? %>
+  <%= f.check_box :recommend %><br />
+</div>
+  <%= f.submit "Create Review", class: "button-submit" %>
+<% end %>

@@ -6,4 +6,16 @@ class Review < ActiveRecord::Base
 
   validates :review_title, :review_content, :user_id, :film_id, { presence: true }
 
+  def total_ratings
+    if ratings.any?
+      ratings.sum(:rating)
+    end
+  end
+
+  def average_rating
+    if ratings.any?
+      total_ratings/ratings.count
+    end
+  end
+
 end

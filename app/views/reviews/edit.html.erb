@@ -1,0 +1,22 @@
+<%= form_for @review do |f| %>
+  <div class="form-group">
+    <div>
+      <%= f.label :review_title, "Review Title" %>
+    </div>
+    <div>
+      <%= f.text_field :review_title, value: @review.review_title %><br />
+    </div>
+    <div>
+      <%= f.label :review_content, "Review Content" %>
+    </div>
+    <div>
+      <%= f.text_area :review_content, value: @review.review_content %><br />
+    </div>
+    <div>
+      <%= f.label :Recommend? %>
+      <%= f.check_box :recommend %><br />
+    </div>
+  </div>
+
+  <%= f.submit "Edit Comment", class: "btn btn-primary" %>
+<% end %>

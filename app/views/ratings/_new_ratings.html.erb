@@ -1,0 +1,9 @@
+<%= form_for [rateable, @rating] do |f| %>
+  <%= f.radio_button :rating, 1  %>  1
+  <%= f.radio_button :rating, 2  %>  2
+  <%= f.radio_button :rating, 3  %>  3
+  <%= f.radio_button :rating, 4  %>  4
+  <%= f.radio_button :rating, 5  %>  5
+
+  <%= f.submit "Give Rating", class: "btn btn-primary" %>
+<% end %>
