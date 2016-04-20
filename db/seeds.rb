@@ -8,7 +8,7 @@
 
 
 def create_user
-  User.create!(email: Faker::Internet.email, password: "foobar")
+  User.create!(email: Faker::Internet.email, password: "foobar", username: Faker::Name.name)
 end
 
 def create_film

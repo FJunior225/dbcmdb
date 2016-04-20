@@ -17,4 +17,5 @@ class Review < ActiveRecord::Base
       total_ratings/ratings.count
     end
   end
+
 end
