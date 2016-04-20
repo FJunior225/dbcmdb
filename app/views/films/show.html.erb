@@ -1,3 +1,4 @@
+<div class="recent-reviews-container">
 <h1>
   <%= @film.title %> / Rating: <%= render partial: 'ratings/ratings', locals: { rateable: @film } %>
 </h1>
@@ -11,13 +12,12 @@
 <div>
   Film Description: <%= @film.description %>
 </div>
-
+</div>
 <%= render partial: "comments/comments", locals: { commentable: @film } %>
 
 <div class="form-container">
   <%= render partial: "comments/form", locals: { commentable: @film } %>
 </div>
-<hr />
 
 <ul class="nav nav-tabs">
   <li class="active recent"><a href="#">RecentReviews</a></li>
@@ -27,8 +27,8 @@
 <section class="recent-partial"><%= render partial: 'films/recent' %></section>
 <section class="trusted-partial"><%= render partial: 'films/trusted' %></section>
 
-<hr />
+<div class='review-input recent-reviews-container'>
 <h2>Submit a Review</h2>
-
+</div>
 <%= render partial: 'reviews/review_form', locals: { review: @review } %>
 
