@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" } 
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
     get 'users/:id' => 'users#show'
 
-  
+
 
 
 
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :films, only: [:show] do
     resources :comments, module: :films
+    resources :ratings, module: :films
   end
 
 
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
 
   resources :reviews, except: [:index, :destroy] do
     resources :comments, module: :reviews
+    resources :ratings, module: :reviews
   end
 
   # Example of regular route:

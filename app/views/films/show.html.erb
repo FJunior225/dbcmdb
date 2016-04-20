@@ -1,7 +1,15 @@
-<h1>Film Page</h1>
-<%=link_to image_tag(@film.picture, size: "200x200") %>
-<h2><%= @film.title %></h2>
-<p>Film Description: <%= @film.description %></p>
+<h1>
+  <%= @film.title %> / Rating: <%= render partial: 'ratings/ratings', locals: { rateable: @film } %>
+</h1>
+<h4>Rate This Movie! <%= render partial: 'ratings/new_ratings', locals: { rateable: @film }%></h4>
+
+<div>
+  <%=link_to image_tag(@film.picture, size: "200x200") %>
+</div>
+
+<div>
+  Film Description: <%= @film.description %>
+</div>
 
 <%= render partial: "comments/comments", locals: { commentable: @film } %>
 
@@ -22,7 +30,4 @@
 <h2>Submit a Review</h2>
 
 <%= render partial: 'reviews/review_form', locals: { review: @review } %>
-
-
-
 

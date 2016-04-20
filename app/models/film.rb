@@ -7,4 +7,16 @@ has_many :ratings, as: :rateable
 has_many :comments, as: :commentable
 
 validates :title,:description, presence: true
+
+  def total_ratings
+    if ratings.any?
+      ratings.sum(:rating)
+    end
+  end
+
+  def average_rating
+    if ratings.any?
+      total_ratings/ratings.count
+    end
+  end
 end
