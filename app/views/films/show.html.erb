@@ -13,10 +13,10 @@
     </div>
   </div>
   <section class="movie-comment-container">
-    <%= render partial: "comments/comments",  locals: {commentable: @film}  %>
+    <%= render partial: "comments/comments",  locals: {commented_on: @film}  %>
 
     <div class="form-container">
-      <%= render partial: "comments/form", :locals =>  {:commentable => @film}  %>
+      <%= render partial: "comments/form", :locals =>  {commented_on: @film}  %>
     </div>
   </section>
   <section class="movie-review-container">

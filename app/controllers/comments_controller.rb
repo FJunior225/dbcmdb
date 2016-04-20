@@ -11,12 +11,12 @@ class CommentsController < ApplicationController
       @comment.user = current_user
     if @comment.save
       if request.xhr?
-        render :partial => "comments/comment"
+        render :partial => "comments/comment", locals: {comment: @comment}
       else
         redirect_to @commentable
       end
-    # else
-    #   redirect_to action: 'show', controller:'reviews' , id:params[:review][:id].to_i
+     else
+      redirect_to action: 'show', controller:'reviews' , id:params[:review][:id].to_i
     end
   end
 

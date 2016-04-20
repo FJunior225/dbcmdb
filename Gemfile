@@ -33,6 +33,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.0.6'
 
 gem 'pry-rails', :group => :development
+
+gem 'pry-nav', :group => :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
