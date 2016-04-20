@@ -1,6 +1,10 @@
 /*
 Header color #ff5a5f
 */
+html {
+
+}
+
 .col-md-6 img {
   width:30%;
 }
@@ -13,6 +17,10 @@ Header color #ff5a5f
 body{
   margin:0px; 
   margin-top: 0px;
+  background-image: url('no-country-for-old-men.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .header h1{
   font-size: 16px;
