@@ -15,15 +15,17 @@
 <h2 class="cat-heading">
 <span>Categories</span>
 </h2>
-
-<ul class="category-list">
+<table style="width:80%", class="category-list">
+  <tr>
 <% @categories.each do |category| %> 
-    <li> <%= link_to "#{category.name}", category_path(category.id) %></li>
-    <ol>
-    <% category.films.each do |film| %>
-    <li> <%= link_to "#{film.title}", film_path(film.id) %></li>
-    <% end %>
-    </ol>
+    <th><strong> <%= link_to "#{category.name}", category_path(category.id) %></strong></th>
 <% end %>
-</ul>
-
+  </tr>
+<% @categories.each do |category| %>   
+    <% category.films.each do |film| %>
+  <tr>
+    <td> <%= link_to "#{film.title}", film_path(film.id) %></td>
+  </tr>
+    <% end %>
+<% end %>
+</table>
