@@ -1,10 +1,21 @@
 /*
 Header color #ff5a5f
 */
-html {
+form {
 
+  margin:auto;
 }
 
+main {
+  width:70%;
+  margin: auto;
+  background-color: gray;
+}
+
+.film-title {
+  text-align: center;
+  color:white;
+}
 .col-md-6 img {
   width:30%;
 }
