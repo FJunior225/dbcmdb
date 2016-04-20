@@ -1,6 +1,8 @@
 <%= render partial: 'reviews/review', locals: { review: @review } %>
 
 <%= render partial: 'ratings/ratings', locals: { rateable: @review } %>
+Did you find this review useful?
+
 <%= link_to "Edit", edit_review_path(@review) %>
 
 | <%= link_to "Back", film_path(@film) %>

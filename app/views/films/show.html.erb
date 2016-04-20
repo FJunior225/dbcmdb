@@ -1,7 +1,8 @@
 <h1>
-  <%= @film.title %> / Rating: <%= render partial: 'ratings/ratings', locals: { rateable: @film } %>
+  <%= @film.title %> /<%= render partial: 'ratings/ratings', locals: { rateable: @film } %>
 </h1>
-<h4>Rate This Movie! <%= render partial: 'ratings/new_ratings', locals: { rateable: @film }%></h4>
+
+<h4>Rate This Movie!  <%= render partial: 'ratings/new_ratings', locals: { rateable: @film }%></h4>
 
 <div>
   <%=link_to image_tag(@film.picture, size: "200x200") %>
@@ -18,24 +19,13 @@
 </div>
 <hr />
 
-<h1>Film Reviews</h1>
-<% @film.reviews.each do |review| %>
-  <%= render partial: 'reviews/review', locals: { review: review } %>
-  <br>
-  <hr />
-<% end %>
 <ul class="nav nav-tabs">
   <li class="active recent"><a href="#">RecentReviews</a></li>
   <li class="trusted"><a href="#">TrustedReviews</a></li>
 </ul>
 
-<%=link_to image_tag(@film.picture, size: "200x200") %>
-<h2><%= @film.title %></h2>
-<p>Film Description: <%= @film.description %></p>
-<hr />
 <section class="recent-partial"><%= render partial: 'films/recent' %></section>
 <section class="trusted-partial"><%= render partial: 'films/trusted' %></section>
->>>>>>> master
 
 <hr />
 <h2>Submit a Review</h2>

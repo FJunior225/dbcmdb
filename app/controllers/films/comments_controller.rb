@@ -1,4 +1,4 @@
-class Films::CommentsController <CommentsController
+class Films::CommentsController < CommentsController
   before_action :set_commentable
 
   private
