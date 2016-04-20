@@ -17,6 +17,9 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    unless current_user == @review.user
+      redirect_to(@review, notice: "You cannot edit this review!") and return
+    end
   end
 
   def update

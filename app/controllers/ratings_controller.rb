@@ -10,6 +10,7 @@ class RatingsController < ApplicationController
 
   def create
     @rating = @rateable.ratings.new(rating_params)
+    @review = Review.find_by(id: @rating.rateable_id)
     reviewer = Review.find_by(id: @rating.rateable_id).user
     unless current_user == reviewer
       @rating.user = current_user
@@ -18,9 +19,11 @@ class RatingsController < ApplicationController
         redirect_to @rateable
       else
         flash[:alert] = "You can only rate an item once!"
+        redirect_to @review
       end
     else
       flash[:alert] = "You cannot rate your own review!"
+      redirect_to @review
     end
   end
 
