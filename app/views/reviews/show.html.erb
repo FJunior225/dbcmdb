@@ -1,3 +1,5 @@
+<main>
+<div class="movie-comment-container">
 <section class='review_rating'>
   <%= render partial: 'reviews/review', locals: { review: @review } %>
 
@@ -21,3 +23,5 @@
 <div class="form-container">
   <%= render partial: "comments/form", locals: { commentable: @review } %>
 </div>
+</div>
+</main>
