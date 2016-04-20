@@ -2,9 +2,11 @@
   text-align: center;
   font-size: 19px;
   padding-top: 40px;
+  color: #FFFFFF;
 }
 .text-lead{
   text-align: center;
+  color: #FFFFFF;
   padding-bottom: 40px;
 }
 
@@ -16,7 +18,9 @@
   margin-top: 40px;
   margin-left:150px;
   margin-bottom: 50px;
+  color:#FFF;
 }
 
-.category-position{
+.category-list a {
+  color:#FFF;
 }

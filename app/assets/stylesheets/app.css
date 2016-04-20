@@ -7,10 +7,10 @@ form {
   margin:auto;
 }
 
-.film-package {
-
+body{
+  padding: 0;
+  margin:0;
 }
-
 .movie-comment-container, .movie-review-container {
   width:80%;
   margin:auto;
@@ -33,7 +33,7 @@ form {
 }
 
 main {
-  width:70%;
+  width:50%;
   margin: auto;
   background-color: white;
   padding-top: 1em;
@@ -53,14 +53,15 @@ main {
 }
 .header{
   background-color: #ff5a5f;
-  margin:0px;
+  margin: auto;
   padding-top: 30px;
   padding-bottom: 30px;
+  width:100%;
 }
 body{
   margin:0px; 
   margin-top: 0px;
-  background-image: url('no-country-for-old-men.jpg');
+  background-image: url('birdman_movie-wallpaper.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
