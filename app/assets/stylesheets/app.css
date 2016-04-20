@@ -43,10 +43,9 @@ main {
   text-align: center;
   color:black;
   font-family: 'Droid Serif', serif;
-  border:2px solid rgb(251, 66, 74);
   border-radius: 7px;
-  width:25%;
-  background-color: rgb(242,242,242);
+  width:80%;
+  /*background-color: rgb(242,242,242);*/
 }
 .col-md-6 img {
   width:30%;
@@ -99,3 +98,20 @@ body{
    color:#ff5a5f;
 }
 
+footer{
+  padding: 100px 20px 90px 20px;
+  text-align: center;
+  background-color:#ff5a5f;
+  color: #FFF;
+  font-size: 12px;
+  margin-top: 25%;
+}
+.footer-list{
+  display: inline-block;
+  padding: 20px; 
+  text-align: center;
+}
+
+footer a{
+  color: #FFF;  
+}

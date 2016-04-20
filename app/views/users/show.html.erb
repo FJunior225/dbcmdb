@@ -1,4 +1,5 @@
-
+<div class="user-show-page">
+<main>
 <h2><%=@user.username%>'s Reviews</h2>
 <h4>
 <% if @user.trusted %>
@@ -16,3 +17,5 @@
     <p><%= review.review_content %></p>
   </section>
 <%end%>
+</main>
+</div>
