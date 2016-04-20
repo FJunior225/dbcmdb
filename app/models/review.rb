@@ -21,6 +21,8 @@ class Review < ActiveRecord::Base
   def positive_ratings
     if ratings.any?
       ratings.where('rating  > ?', 0).count
+    else
+      positive_ratings = 0
     end
   end
 
