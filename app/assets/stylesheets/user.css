@@ -1,0 +1,13 @@
+.signup{
+  text-align: center;
+  margin-top:30px;
+  margin-bottom: 40px;
+}
+
+.user-session-input{
+  background-color: white;
+  color: #ff5a5f;
+  text-align: left;
+  width: 30%;
+  text-transform: none;
+}
