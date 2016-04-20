@@ -1,6 +1,9 @@
 /*
 Header color #ff5a5f
 */
+.col-md-6 img {
+  width:30%;
+}
 .header{
   background-color: #ff5a5f;
   margin:0px;

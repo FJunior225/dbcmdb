@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   root "categories#index"
   resources :categories, only: [:show]
-  resources :films, only: [:show] do
+  resources :films, only: [:show, :index] do
     resources :comments, module: :films
     resources :ratings, module: :films
   end

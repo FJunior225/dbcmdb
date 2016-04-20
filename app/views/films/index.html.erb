@@ -1,0 +1,4 @@
+<% @films.order('@films.created_at DESC').each do |film| %>
+    <%=film.title%>
+    <%=film.picture%>
+<%end%>
