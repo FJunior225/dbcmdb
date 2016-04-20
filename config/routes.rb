@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :films, only: [:show] do
     resources :comments, module: :films
+
   end
 
 
