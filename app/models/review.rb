@@ -18,4 +18,10 @@ class Review < ActiveRecord::Base
     end
   end
 
+  def positive_ratings
+    if ratings.any?
+      ratings.where('rating  > ?', 0).count
+    end
+  end
+
 end

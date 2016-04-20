@@ -1,6 +1,6 @@
 <div class="recent-reviews-container">
 <h1>
-  <%= @film.title %> /<%= render partial: 'ratings/ratings', locals: { rateable: @film } %>
+  <%= @film.title %> / Rating: <%= render partial: 'ratings/ratings', locals: { rateable: @film } %>
 </h1>
 
 <h4>Rate This Movie!  <%= render partial: 'ratings/new_ratings', locals: { rateable: @film }%></h4>

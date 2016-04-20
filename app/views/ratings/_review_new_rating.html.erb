@@ -1,0 +1,6 @@
+<%= form_for [rateable, @rating] do |f| %>
+  <%= f.radio_button :rating, 1 %>Yes
+  <%= f.radio_button :rating, -1 %>No<br />
+
+  <%= f.submit "Submit Rating", class: "btn btn-primary" %>
+<% end %>
