@@ -2,16 +2,15 @@
   <li class="active recent"><a href="#">RecentReviews</a></li>
   <li class="trusted"><a href="#">TrustedReviews</a></li>
 </ul>
-
+<div class="recent-reviews-container">
 <%=link_to image_tag(@film.picture, size: "200x200") %>
-<h2><%= @film.title %></h2>
+<h3><%= @film.title %></h3>
 <p>Film Description: <%= @film.description %></p>
-<hr />
+</div>
 <section class="recent-partial"><%= render partial: 'films/recent' %></section>
 <section class="trusted-partial"><%= render partial: 'films/trusted' %></section>
 
-<hr />
-<div class='review-input'>
+<div class='review-input recent-reviews-container'>
 <h3>Submit a Review</h3>
 </div>
 

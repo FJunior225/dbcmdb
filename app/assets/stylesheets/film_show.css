@@ -55,3 +55,7 @@ form input:focus, form textarea:focus {
   color: #c1c1c1;
   font-family: Arial;
 }
+
+.recent-reviews-container{
+  margin-left: 25px;
+}

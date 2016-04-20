@@ -1,5 +1,5 @@
 
-<h1>Most Trusted Film Reviews</h1>
+<h2 class="cat-heading">Most Trusted Film Reviews</h2>
 <% @film.reviews.order('reviews.created_at DESC').each do |review| %>
    <% user = User.find(review.user_id) %>
   <%if user.trusted %>
