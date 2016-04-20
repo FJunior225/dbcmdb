@@ -1,3 +1,13 @@
-<h1><%=@user.username%></h1>
 
 <h2><%=@user.username%>'s Reviews</h2>
+
+<% @user.reviews.each do |review| %>
+  <section class="individual-review-container">
+    <h2><%= link_to review.film.title, film_path(Film.find(review.film_id)) %></h2>
+      <% if review.recommend %>
+        <section class="review-status"><%=@user.username%> recommended this movie</section>
+      <% end %>
+    <h2><%= review.review_title %></h2>
+    <p><%= review.review_content %></p>
+  </section>
+<%end%>
