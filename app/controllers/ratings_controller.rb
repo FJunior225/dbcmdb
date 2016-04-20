@@ -16,14 +16,15 @@ class RatingsController < ApplicationController
       @rating.user = current_user
       if @rating.save
         reviewer.trusted_user
+        flash[:success] = "You've successfully rated this #{@rateable}"
         redirect_to @rateable
       else
-        flash[:alert] = "You can only rate an item once!"
-        redirect_to @review
+        flash[:danger] = "You can only rate an item once!"
+        redirect_to @rateable
       end
     else
-      flash[:alert] = "You cannot rate your own review!"
-      redirect_to @review
+      flash[:danger] = "You cannot rate your own review!"
+      redirect_to @rateable
     end
   end
 

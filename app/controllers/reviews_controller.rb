@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
       redirect_to @review
     else
       @errors = @review.errors.full_messages
-      flash[:error] = "You did not enter a valid reponse!"
+      flash[:danger] = "You did not enter a valid reponse!"
       render 'reviews/edit'
     end
   end
