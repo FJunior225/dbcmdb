@@ -1,6 +1,9 @@
 class RatingsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+  end
+
   def new
     @rating = Rating.new
   end
@@ -8,14 +11,17 @@ class RatingsController < ApplicationController
   def create
     @rating = @rateable.ratings.new(rating_params)
     @rating.user = current_user
-    if @rating.save
-      if request.xhr?
-        redirect_to @rateable
+    if request.xhr?
+      if @rating.save
+        binding.pry
+        { rating_counter: @rating.total_rating }.to_json
       else
-        redirect_to @rateable
+        halt(401)
       end
     else
-      redirect_to action: 'show', controller:'reviews' , id:params[:review][:id].to_i
+      if @rating.save
+        redirect_to @rateable
+      end
     end
   end
 
