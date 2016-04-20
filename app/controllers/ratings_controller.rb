@@ -13,7 +13,6 @@ class RatingsController < ApplicationController
     @rating.user = current_user
     if request.xhr?
       if @rating.save
-        binding.pry
         { rating_counter: @rating.total_rating }.to_json
       else
         halt(401)

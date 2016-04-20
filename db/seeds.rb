@@ -28,7 +28,7 @@ def create_category
 	Category.create(name: "Comedy")
 	Category.create(name: "Drama")
 	Category.create(name: "Total Shit")
-	Category.create(name: "New Release")
+	Category.create(name: "New Releases")
 end
 
 10.times {create_user}
