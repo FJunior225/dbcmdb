@@ -1,6 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
 /*
 Header color #ff5a5f
 */
+form {
+
+  margin:auto;
+}
+
+.film-package {
+
+}
+
+.movie-comment-container, .movie-review-container {
+  width:80%;
+  margin:auto;
+}
+
+
+.film-image {
+  padding-bottom: 1em;
+}
+
+.film-image img {
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px black;
+}
+
+
+
+.rating-container {
+  padding-bottom: 2em;
+}
+
+main {
+  width:70%;
+  margin: auto;
+  background-color: white;
+  padding-top: 1em;
+}
+
+.film-title {
+  text-align: center;
+  color:black;
+  font-family: 'Droid Serif', serif;
+  border:2px solid rgb(251, 66, 74);
+  border-radius: 7px;
+  width:25%;
+  background-color: rgb(242,242,242);
+}
 .col-md-6 img {
   width:30%;
 }
@@ -13,6 +60,10 @@ Header color #ff5a5f
 body{
   margin:0px; 
   margin-top: 0px;
+  background-image: url('no-country-for-old-men.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .header h1{
   font-size: 16px;
