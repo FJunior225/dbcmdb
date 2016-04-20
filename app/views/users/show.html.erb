@@ -1,5 +1,10 @@
 
 <h2><%=@user.username%>'s Reviews</h2>
+<h4>
+<% if @user.trusted %>
+  <%= @user.username %> is a Trusted Reviewer
+<% end %>
+</h4>
 
 <% @user.reviews.each do |review| %>
   <section class="individual-review-container">
@@ -7,7 +12,7 @@
       <% if review.recommend %>
         <section class="review-status"><%=@user.username%> recommended this movie</section>
       <% end %>
-    <h2><%= review.review_title %></h2>
+    <h2><%= link_to review.review_title, review_path(review) %></h2>
     <p><%= review.review_content %></p>
   </section>
 <%end%>

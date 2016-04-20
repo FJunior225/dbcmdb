@@ -1,17 +1,16 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @review = Review.new
   end
 
   def create
-    binding.pry
     @review = Review.new(review_params)
     @review.user = current_user
     if @review.save
       redirect_to action: 'show', controller:'films', id:params[:review][:film_id].to_i
     else
-      flash.now[:danger] = 'You must enter all fields and be logged in to post a review'
       render action: 'show', controller:'films', id:params[:review][:film_id].to_i
     end
   end
