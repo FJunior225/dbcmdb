@@ -2,35 +2,36 @@
   <div class="recent-reviews-container">
     <h1 class="film-title"><%= @film.title %></h1>
     <section class="rating-container">
-       Rating: <%= render partial: 'ratings/ratings', locals: { rateable: @film } %>
+      <h3>Rating:</h3> <%= render partial: 'ratings/ratings', locals: { rateable: @film } %>
+      <h4>Rate This Movie!</h4>
+      <%= render partial: 'ratings/new_ratings', locals: { rateable: @film }%>
     </section>
-    <h4>Rate This Movie!  <%= render partial: 'ratings/new_ratings', locals: { rateable: @film }%></h4>
 
-    <div>
-      <%=link_to image_tag(@film.picture, size: "200x200") %>
-    </div>
-
-    <div>
-      Film Description: <%= @film.description %>
+    <div calss="film-package">
+      <section class="film-image"><%=link_to image_tag(@film.picture, size: "200x200") %></section>
+      <p>Film Description: <%= @film.description %></p>
     </div>
   </div>
-  <%= render partial: "comments/comments", locals: { commentable: @film } %>
+  <section class="movie-comment-container">
+    <%= render partial: "comments/comments", locals: { commentable: @film } %>
 
-  <div class="form-container">
-    <%= render partial: "comments/form", locals: { commentable: @film } %>
-  </div>
+    <div class="form-container">
+      <%= render partial: "comments/form", locals: { commentable: @film } %>
+    </div>
+  </section>
+  <section class="movie-review-container">
+    <ul class="nav nav-tabs">
+      <li class="active recent"><a href="#">RecentReviews</a></li>
+      <li class="trusted"><a href="#">TrustedReviews</a></li>
+    </ul>
 
-  <ul class="nav nav-tabs">
-    <li class="active recent"><a href="#">RecentReviews</a></li>
-    <li class="trusted"><a href="#">TrustedReviews</a></li>
-  </ul>
+    <section class="recent-partial"><%= render partial: 'films/recent' %></section>
+    <section class="trusted-partial"><%= render partial: 'films/trusted' %></section>
 
-  <section class="recent-partial"><%= render partial: 'films/recent' %></section>
-  <section class="trusted-partial"><%= render partial: 'films/trusted' %></section>
-
-  <div class='review-input recent-reviews-container'>
-  <h2>Submit a Review</h2>
-  </div>
-  <%= render partial: 'reviews/review_form', locals: { review: @review } %>
+    <div class='review-input recent-reviews-container'>
+    <h2>Submit a Review</h2>
+    </div>
+    <%= render partial: 'reviews/review_form', locals: { review: @review } %>
+  </section>
 </main>
 

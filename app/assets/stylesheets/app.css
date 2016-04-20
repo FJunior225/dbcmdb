@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
 /*
 Header color #ff5a5f
 */
@@ -6,15 +7,41 @@ form {
   margin:auto;
 }
 
+.film-package {
+
+}
+
+.movie-comment-container, .movie-review-container {
+  width:80%;
+  margin:auto;
+}
+
+
+.film-image {
+  padding-bottom: 1em;
+}
+
+.film-image img {
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px black;
+}
+
+
+
+.rating-container {
+  padding-bottom: 2em;
+}
+
 main {
   width:70%;
   margin: auto;
-  background-color: gray;
+  background-color: white;
 }
 
 .film-title {
   text-align: center;
-  color:white;
+  color:black;
+  font-family: 'Droid Serif', serif;
 }
 .col-md-6 img {
   width:30%;
