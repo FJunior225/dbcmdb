@@ -9,6 +9,7 @@ $(document).ready(function() {
     })
     .done(function(response) {
       $(".comments-box").prepend(response)
+      $(".form-group").attr("text-area").val('')
     })
     .fail(function(response) {
       alert("Please contact support!");
