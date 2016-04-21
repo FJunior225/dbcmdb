@@ -1,3 +1,5 @@
+<main>
+<div class="movie-comment-container">
 <section class='review_rating'>
   <%= render partial: 'reviews/review', locals: { review: @review } %>
 
@@ -9,7 +11,7 @@
 </section>
 
 <div>
-  <% if current_user == @review.user_id %>
+  <% if current_user == @review.user %>
     <%= link_to "Edit", edit_review_path(@review) %>   |
   <% end %>
 
@@ -21,3 +23,5 @@
 <div class="form-container">
   <%= render partial: "comments/form", locals: { commentable: @review } %>
 </div>
+</div>
+</main>

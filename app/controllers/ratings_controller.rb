@@ -10,20 +10,21 @@ class RatingsController < ApplicationController
 
   def create
     @rating = @rateable.ratings.new(rating_params)
-    @rating.user = current_user
+    @review = Review.find_by(id: @rating.rateable_id)
     reviewer = Review.find_by(id: @rating.rateable_id).user
-    if request.xhr?
+    unless current_user == reviewer
+      @rating.user = current_user
       if @rating.save
         reviewer.trusted_user
-        { rating_counter: @rating.total_rating }.to_json
+        flash[:success] = "You've successfully rated this!"
+        redirect_to @rateable
       else
-        halt(401)
-      end
-    else
-      if @rating.save
-        reviewer.trusted_user
+        flash[:danger] = "You can only rate an item once!"
         redirect_to @rateable
       end
+    else
+      flash[:danger] = "You cannot rate your own review!"
+      redirect_to @rateable
     end
   end
 

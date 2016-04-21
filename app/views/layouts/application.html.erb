@@ -10,32 +10,44 @@
 </head>
 <body>
   <div class="header">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-            <!-- <h1>DBC IMDB</li><h1> -->
-            <a href="/"><%= image_tag("dbc_logo.png", :alt => "VHS logo") %></a>
-            </div>
-            <div class="col-md-6">
-                <ul class="nav">
-                  <%if current_user %>
-                    <li><h5>Hi, <%=current_user.username%></h5></li>
-                    <li class='nbtn'><a href="/users/show">My Profile</a></li>
-                    <li class='nbtn'><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+        <a href="/"><%= image_tag("dbc_logo.png", :alt => "VHS logo") %></a>
+        </div>
+        <div class="col-md-6">
+            <ul class="nav">
+              <%if current_user %>
+                <li><h5>Hi, <%=current_user.username%></h5></li>
+                <li class='nbtn'><a href="/users/show">My Profile</a></li>
+                <li class='nbtn'><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
 
-                  <%else%>
-                    <li class='nbtn'><a href="#">Latest Reviews</a></li>
-                    <li class='nbtn'><a href="/users/sign_in">Login</a></li>
-                    <li class='nbtn'><a href="/users/sign_up">Register</a></li>
-                  <% end %>
-                </ul>
-            </div>
-          </div>
+              <%else%>
+                <li class='nbtn'><a href="#">Latest Reviews</a></li>
+                <li class='nbtn'><a href="/users/sign_in">Login</a></li>
+                <li class='nbtn'><a href="/users/sign_up">Register</a></li>
+              <% end %>
+            </ul>
         </div>
       </div>
-
-
+    </div>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+  </div>
 <%= yield %>
-
+  <footer>
+  <nav >
+    <ul>
+    <p class="contact-us">Contact us</p>
+      <li class="footer-list"><a href="#">FJ</a></li>
+      <li class="footer-list"><a href="#">Brett </a></li>
+      <li class="footer-list"><a href="#">Brian</a></li>
+    </ul>
+  </nav>
+  <p class="rights-reserved">
+    &copy; 2016 DBC Movies That Dont Suck; user contributions licensed under bb by-ap 2.0 with attribution not required
+  </p>
+</footer>
 </body>
 </html>
