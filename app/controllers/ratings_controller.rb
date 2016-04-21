@@ -16,7 +16,7 @@ class RatingsController < ApplicationController
       @rating.user = current_user
       if @rating.save
         reviewer.trusted_user
-        flash[:success] = "You've successfully rated this #{@rateable}"
+        flash[:success] = "You've successfully rated this!"
         redirect_to @rateable
       else
         flash[:danger] = "You can only rate an item once!"
