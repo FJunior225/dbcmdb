@@ -6,10 +6,16 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @film = Film.find(params[:review][:film_id])
     @review = Review.new(review_params)
     @review.user = current_user
     if @review.save
-      redirect_to action: 'show', controller:'films', id:params[:review][:film_id].to_i
+      if request.xhr?
+        render partial: "reviews/review", locals: {review: @review},layout: false
+
+      else
+        redirect_to action: 'show', controller:'films', id:params[:review][:film_id].to_i
+      end
     else
       render action: 'show', controller:'films', id:params[:review][:film_id].to_i
     end
