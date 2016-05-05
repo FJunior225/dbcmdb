@@ -1,6 +1,6 @@
 <h3>Comments</h3>
-    <% commentable.comments.each do |comment| %>
-  <div class='well'>
-    <%= comment.comment_body %>
-  </div>
-<% end %>
+<section class="comments-box">
+  <% commented_on.comments.each do |comment| %>
+  <%= render partial: "comments/comment",  locals: {comment: comment}  %>
+  <%end%>
+</section>

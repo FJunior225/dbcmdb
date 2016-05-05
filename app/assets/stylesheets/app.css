@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
+@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
 /*
 Header color #ff5a5f
 */
@@ -42,7 +43,8 @@ main {
 .film-title {
   text-align: center;
   color:black;
-  font-family: 'Droid Serif', serif;
+  font-family: 'Black Ops One', cursive;
+  text-shadow: 2px 2px #ff0000;
   border-radius: 7px;
   width:80%;
   /*background-color: rgb(242,242,242);*/

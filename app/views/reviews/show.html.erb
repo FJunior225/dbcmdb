@@ -18,10 +18,10 @@
   <%= link_to "Back", film_path(@film) %>
 </div>
 
-<%= render partial: "comments/comments", locals: { commentable: @review } %>
+<%= render partial: "comments/comments", locals: { commented_on: @review } %>
 
 <div class="form-container">
-  <%= render partial: "comments/form", locals: { commentable: @review } %>
+  <%= render partial: "comments/form", locals: { commented_on: @review } %>
 </div>
 </div>
 </main>
