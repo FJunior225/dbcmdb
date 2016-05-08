@@ -1,28 +1,28 @@
-== README
+# DBC IMDB Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![IMDB Clone][logo]
 
-Things you may want to cover:
+[logo]: https://66.media.tumblr.com/72dceeb5be43491f22935d8457e263d9/tumblr_o6vbhml77m1ubupxao1_1280.png"IMDB clone"
 
-* Ruby version
+## Summary
 
-* System dependencies
+The IMDB clone is a fully functional application completed in 3 days. It was a replica of the original IMDB. 
 
-* Configuration
+## Technologies/APIs
 
-* Database creation
+* Ruby on Rails
+* Bootstrap
+* Jquery 
+* OmniAuth Facebook Authentication
 
-* Database initialization
+## Future 
 
-* How to run the test suite
+* Omniauth Twitter Authentication
+* the Open source movie database API.
 
-* Services (job queues, cache servers, search engines, etc.)
+## The Awesome Team
 
-* Deployment instructions
+* [Brian Bier](https://github.com/brianbier)
+* [FJ Collins Jr.](https://github.com/FJunior225)
+* [Brett Ripley](https://github.com/drumguy16)
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
