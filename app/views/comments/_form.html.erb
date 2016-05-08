@@ -1,4 +1,4 @@
-<%= form_for [commentable, @comment] do |f| %>
+<%= form_for [commented_on, @comment] do |f| %>
   <div class="form-group comment-form">
     <%= f.text_area :comment_body, class: "form-group review-input", placeholder: "Comment Content" %>
   </div>
