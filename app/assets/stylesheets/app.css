@@ -40,14 +40,20 @@ main {
   padding-top: 1em;
 }
 
+.user-show-page{
+  margin-top: 50px;
+  margin-bottom: 60px;
+
+}
 .film-title {
   text-align: center;
   color:black;
   font-family: 'Black Ops One', cursive;
   text-shadow: 2px 2px #ff0000;
   border-radius: 7px;
-  width:80%;
-  /*background-color: rgb(242,242,242);*/
+  width:40%;
+  padding: 6px;
+  background-color: rgb(242,242,242);
 }
 .col-md-6 img {
   width:30%;
