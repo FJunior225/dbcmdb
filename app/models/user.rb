@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
-    	   :omniauth_providers => [:facebook]
+    	   :omniauth_providers => [:facebook,:google_oauth2]
 
-# , :twitter, :google_oauth2
+# , :twitter
 
   attr_accessor :login
 
