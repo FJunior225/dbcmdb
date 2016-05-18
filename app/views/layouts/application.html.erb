@@ -23,7 +23,7 @@
                 <li class='nbtn'><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
 
               <%else%>
-                <li class='nbtn'><a href="#">Latest Reviews</a></li>
+<!--                 <li class='nbtn'><a href="#">Latest Reviews</a></li> -->
                 <li class='nbtn'><a href="/users/sign_in">Login</a></li>
                 <li class='nbtn'><a href="/users/sign_up">Register</a></li>
               <% end %>
@@ -46,7 +46,8 @@
     </ul>
   </nav>
   <p class="rights-reserved">
-    &copy; 2016 DBC Movies That Dont Suck; user contributions licensed under bb by-ap 2.0 with attribution not required
+    &copy; 2016 DBC Movies<br>
+    <a href="https://github.com/nyc-sea-lions-2016/dbcmdb">See the code on github</a>
   </p>
 </footer>
 </body>
