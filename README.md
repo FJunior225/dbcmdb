@@ -20,7 +20,6 @@ The IMDB clone is a fully functional application completed in 3 days. It was a r
 
 ## Future 
 
-* Omniauth Google + Authentication
 * the Open source movie database API.
 
 ## The Awesome Team
